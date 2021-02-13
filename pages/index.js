@@ -1,11 +1,24 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export async function getStaticProps({ locale }) {
+  const res = await import(`../locales/${locale}.json`);
+
+  return {
+    props: {
+      t: res.default,
+    },
+  };
+}
+
+export default function Home({ t }) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
-        <title>Next Multilenguaje</title>
+        <title>{t.meta.titulo}</title>
       </Head>
 
       <div className={styles.contenedor}>
@@ -13,29 +26,26 @@ export default function Home() {
           <nav className={styles.navbar}>
             <div className={styles.logo}>ACME</div>
             <a href="#" className={styles.navbarLink}>
-              Inicio
+              {t.navbar.inicio}
             </a>
             <a href="#" className={styles.navbarLink}>
-              Precios
+              {t.navbar.precios}
             </a>
             <a href="#" className={styles.navbarLink}>
-              Contacto
+              {t.navbar.contacto}
             </a>
             <a href="#" className={styles.navbarLink}>
-              Blog
+              {t.navbar.blog}
             </a>
           </nav>
         </header>
 
         <main className={styles.main}>
-          <h1>Bienvenido al sitio oficial de productos ACME</h1>
+          <h1>{t.hero.titulo}</h1>
 
-          <p className={styles.descripcion}>
-            Acá encontrarás un catálogo de productos diseñados especialmente
-            para ti.
-          </p>
+          <p className={styles.descripcion}>{t.hero.parrafo}</p>
 
-          <button>Registrate gratis</button>
+          <button>{t.hero.boton}</button>
         </main>
       </div>
     </>
