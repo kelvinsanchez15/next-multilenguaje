@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "titulo": "Next Multilanguage"
+  },
+  "navbar": {
+    "inicio": "Home",
+    "precios": "Pricing",
+    "contacto": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "titulo": "Welcome to the official site of ACME products",
+    "parrafo": "Here you'll find a catalog of products designed especially for you.",
+    "boton": "Sign up for free"
+  }
+}

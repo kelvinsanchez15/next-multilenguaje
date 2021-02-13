@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "titulo": "Next Multilenguaje"
+  },
+  "navbar": {
+    "inicio": "Inicio",
+    "precios": "Precios",
+    "contacto": "Contacto",
+    "blog": "Blog"
+  },
+  "hero": {
+    "titulo": "Bienvenido al sitio oficial de productos ACME",
+    "parrafo": "Acá encontrarás un catálogo de productos diseñados especialmente para ti.",
+    "boton": "Registrate gratis"
+  }
+}
